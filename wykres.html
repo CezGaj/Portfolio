@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<title>Generator graph</title>
+</head>
+
+<body>
+<div align="center">
+Generator graph f(x)=ax<sup>2</sup>+bx+c<br><br>
+value a <input type="number" id="a" autocomplete="off" value=0><br>
+value b <input type="number" id="b" autocomplete="off" value=0><br>
+value c <input type="number" id="c" autocomplete="off" value=0><br>
+<br>
+<button onclick="generate()">generate</button>
+<button onclick="reset()">reset</button>
+<button onclick="drawCanvas()">clear</button>
+<br>
+</div>	
+<br>
+<div align="center">
+<canvas id="canvas" width="400" height="400" style="border:2px solid #000000;" ></canvas>
+</div>
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+drawCanvas();
+
+function drawCanvas() 
+{
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.beginPath();
+	ctx.moveTo(200,0);
+	ctx.lineTo(200,400);
+	ctx.strokeStyle="#FF0000";
+	ctx.stroke();
+	ctx.closePath();
+
+	ctx.beginPath();
+	ctx.moveTo(0,200);
+	ctx.lineTo(400,200);
+	ctx.strokeStyle="#FF0000";
+	ctx.stroke();
+	ctx.closePath();
+}
+
+function generate() 
+{
+	var a = parseInt(document.getElementById("a").value);
+	var b = parseInt(document.getElementById("b").value);
+	var c = parseInt(document.getElementById("c").value);
+	var x,y;		
+	ctx.beginPath();
+	for(x=-10;x<10;x=x+0.1)
+	{
+	y = (a * Math.pow(x,2)) + (b * x) + c;
+	ctx.lineTo(200+(x*20),200-(y*20));
+	}	
+	ctx.strokeStyle="#000000";			
+	ctx.stroke();
+	ctx.closePath();	
+}
+
+function reset() 
+{
+	drawCanvas();
+	document.getElementById("a").value=0;
+	document.getElementById("b").value=0;
+	document.getElementById("c").value=0;
+}	
+</script>
+</body>
+</html>

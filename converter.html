@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<title>Converter numbers</title>
+</head>
+<body>
+<input type="text" id="input_number" onchange="check_system(this.value)"/><b>from:</b> 
+<input type="radio" id="bin1" name="system" value="2">
+<label for="bin1">binary</label>
+<input type="radio" id="oct1" name="system" value="8">
+<label for="oct1">octary</label>
+<input type="radio" id="dec1" name="system" value="10">
+<label for="dec1">decimal</label>
+<input type="radio" id="hex1" name="system" value="16">
+<label for="hex1">hedaximal</label>
+<b>to:</b>
+<input type="radio" id="bin2" name="system2" value="2">
+<label for="bin2">binary</label>
+<input type="radio" id="oct2" name="system2" value="8">
+<label for="oct2">octary</label>
+<input type="radio" id="dec2" name="system2" value="10">
+<label for="dec2">decimal</label>
+<input type="radio" id="hex2" name="system2" value="16">
+<label for="hex2">hedaximal</label>
+<button onclick="convert()">convert</button>
+<p id="result"></p>
+<script>
+var table = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+function check_system(value)
+{
+	for(var i=0;i<value.length;i++)
+	{
+		if(value[i]>1) document.getElementById("bin1").disabled=true;
+		if(value[i]>7) document.getElementById("oct1").disabled=true;
+		if(value[i]>9) document.getElementById("dec1").disabled=true;
+	}
+
+}
+function convert()
+{
+	var input, output;
+	var system = document.getElementsByName("system");
+	var system2 = document.getElementsByName("system2");
+	for(var i=0;i<system.length;i++)
+	{
+		if(system[i].checked==true)
+		{
+			input=system[i].value;
+			break;
+		}
+
+	}
+	for(var i=0;i<system2.length;i++)
+	{
+		if(system2[i].checked==true)
+		{
+			output=system2[i].value;
+			break;
+		}
+
+	}
+}
+</script>
+</body>
+</html>

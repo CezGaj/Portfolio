@@ -1,9 +1,118 @@
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Portfolio</title>
-</head>
-<body>
-Site under construction. Cezary Gajewski
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>Portfolio</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	</head>
+	<body onload="for(var i=0;i<3;i++) new_coordinate(i);">
+		<div class="container-fluid">
+			<div class="jumbotron jumbotron-fluid">						
+				<h1 class="display-1 text-center">Cezary Gajewski</h1>
+			</div>
+		<div class="row">
+		  <div class="col-md-6">
+		  <button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="collapse" data-target="#card1" aria-expanded="false" aria-controls="card1">Multiple choice test</button> 
+			<div class="collapse" id="card1">
+			  <div class="card card-body">
+				Multiple choice test is responsive web application, where user can check your knowledge with the chosen issue. You can choose a three demo tests: <br>
+				<ul>
+				<li>Multiple choice test from operating systems punctation: [0,0.5,1], password: <b>test_sop</b></li>
+				<li>Multiple choice test from operating systems punctation: [0,1], password: <b>test_soph</b></li>
+				<li>Single choice test from maths, 15 example questions from the Polish Matura exam, password: <b>test_mat</b></li>
+				</ul>
+				<p>If you have solve a test, go to this page <span><a href="https://testy-wielokrotnego-wyboru.000webhostapp.com/">Enter</a></span></p>
+				<p>If you have fun as a teacher, you can go to the admin page <span><a href="https://testy-wielokrotnego-wyboru.000webhostapp.com/edytor.php"> Enter </a></span></p>
+				<p>On your own server, you can configure own tests. Script supports MathJax. <span><a href="https://www.github.com/CezGaj/testy-wielokrotnego-wyboru"> Enter </a></span></p>
+			  </div>
+			</div>	
+		  </div>
+		  <div class="col-md-6">
+			<button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="collapse" data-target="#card2" aria-expanded="false" aria-controls="card2">Simple chat</button>
+			<div class="collapse" id="card2">
+			  <div class="card card-body">
+				<p>Simple chat is responsive web application, where you can connect with other people. See more on GitHub <span><a href="https://www.github.com/CezGaj/simple-chat">Enter</a></span></p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<div class="d-md-none"><button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="collapse" data-target="#card3" aria-expanded="false" aria-controls="card3">Simple generator graph</button></div>
+			<div class="d-none d-md-block"><button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="modal" data-target="#app">Simple generator graph</button></div>
+			<div class="modal fade" id="app" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+			  <div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body">
+					<div class="row justify-content-center">
+					  <iframe src="wykres.html" style="height: 600px; width: 600px;"></iframe>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="collapse" id="card3">
+			  <div class="card card-body">
+				<iframe src="wykres.html" style="height: 500px;"></iframe>
+			  </div>
+			</div>			  
+		  </div>
+		  <div class="col-md-6">
+			<button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="collapse" data-target="#card4" aria-expanded="false" aria-controls="card4">About me</button>
+			<div class="collapse" id="card4">
+			  <div class="card card-body">
+				<p>My name is Cezary Gajewski, i'm <span id="years"></span> years old. I can doing responsive web applications and I use PHP, MySQL, Javascript and Bootstrap. </p><p>Contact via <a href="mailto:krecik975@gmail.com">e-mail</a> or <a href="https://www.github.com/CezGaj">GitHub</a></p>
+			  </div>
+			</div>			  
+		  </div>
+		</div>
+		</div>
+		<div id="list-spinners">
+			<div class="spinner-grow" name="circle" style="position:absolute;" onmousemove="new_coordinate(0);"></div>
+			<div class="spinner-grow" name="circle" style="position:absolute;" onmousemove="new_coordinate(1);"></div>
+			<div class="spinner-grow" name="circle" style="position:absolute;" onmousemove="new_coordinate(2);"></div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<script>
+		var birth_date = new Date('9/18/1995');
+		document.getElementById("years").innerHTML=Math.trunc(((new Date() - birth_date) / (1000 * 60 * 60 * 24)) / 365);
+		window.addEventListener("resize", resizing);
+		setTimeout(resizing,300);
+		var len;
+		function new_coordinate(i)
+		{
+			len = document.getElementsByName("circle").length;
+			if(len<50) 
+			{
+				$("#list-spinners").append('<div class="spinner-grow" name="circle" style="position:absolute;" onmousemove="new_coordinate('+(len)+');"></div>');
+				document.getElementsByName("circle")[len].style.bottom=(Math.floor(Math.random() * (window.innerHeight*0.9-window.innerHeight*0.1) + window.innerHeight*0.1)) + "px";
+				document.getElementsByName("circle")[len].style.left=(Math.floor(Math.random() * (window.innerWidth*0.9-window.innerWidth*0.1) + window.innerWidth*0.1)) + "px";
+			}				
+			document.getElementsByName("circle")[i].style.bottom=(Math.floor(Math.random() * (window.innerHeight*0.9-window.innerHeight*0.1) + window.innerHeight*0.1)) + "px";
+			document.getElementsByName("circle")[i].style.left=(Math.floor(Math.random() * (window.innerWidth*0.9-window.innerWidth*0.1) + window.innerWidth*0.1)) + "px";
+		}
+		function resizing()
+		{
+			len = document.getElementsByName("circle").length;
+			for(var i=0;i<len;i++)
+			{
+				document.getElementsByName("circle")[i].style.bottom=(Math.floor(Math.random() * (window.innerHeight*0.9-window.innerHeight*0.1) + window.innerHeight*0.1)) + "px";
+				document.getElementsByName("circle")[i].style.left=(Math.floor(Math.random() * (window.innerWidth*0.9-window.innerWidth*0.1) + window.innerWidth*0.1)) + "px";				
+			}
+			if(window.innerWidth>767) 
+			{
+				 $('#card3').collapse('hide');
+			}
+
+		}
+		</script>
+	</body>
+</html>
 </html>
